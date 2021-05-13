@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {ReactElement, useState} from "react";
 import {DogResponseInitState} from "../types/types";
+import axios from "axios";
 
 const AppContainer = styled.div`
   display: flex;
@@ -42,10 +43,11 @@ export const HomePage = (): ReactElement => {
     const [dogObject, setDogObject] = useState(DogResponseInitState);
 
     const getDogURL = async (): Promise<void> => {
-        const rDog = await fetch(`https://api.thedogapi.com/v1/images/search`)
-            .then(res => res.json())
-
-        setDogObject(rDog);
+        await axios.get(`https://api.thedogapi.com/v1/images/search`)
+            .then(res => {
+                const rDog = res.data;
+                setDogObject(rDog);
+            })
     }
 
     return (
