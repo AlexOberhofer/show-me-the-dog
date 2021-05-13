@@ -19,18 +19,22 @@ const ContentContainer = styled.div`
   text-align: center;
   align-self: center;
   align-content: center;
+  
 `
 
 const DogButton = styled.button`
   width: fit-content;
   align-self: center;
   margin: 1rem;
+  
 `
 
 const DogImage = styled.img`
-  align-self: center;
-  width: 50%;
-  height: 50%;
+  display: flex;
+  max-width:640px;
+  max-height:320px;
+  width: auto;
+  height: auto;
 `
 
 export const HomePage = (): ReactElement => {
@@ -54,10 +58,8 @@ export const HomePage = (): ReactElement => {
 
             <ContentContainer>
                 <DogImage src={dogObject[0].url} />
-                <DogButton onClick={getDogURL}>SHOW ME THE DOG</DogButton>
-
             </ContentContainer>
-
+            <DogButton onClick={getDogURL}>SHOW ME THE DOG</DogButton>
         </AppContainer>
     )
 }
