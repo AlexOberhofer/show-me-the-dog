@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {ReactElement, useState} from "react";
+import {DogResponseInitState} from "../types/types";
 
 const AppContainer = styled.div`
   display: flex;
@@ -27,23 +28,20 @@ const DogButton = styled.button`
 `
 
 const DogImage = styled.img`
-  
+  align-self: center;
+  width: 50%;
+  height: 50%;
 `
 
 export const HomePage = (): ReactElement => {
 
-    const [dogObject, setDogObject] = useState({});
-
-    const onClickBtn = (): void => {
-        getDogURL();
-    }
+    const [dogObject, setDogObject] = useState(DogResponseInitState);
 
     const getDogURL = async (): Promise<void> => {
         const rDog = await fetch(`https://api.thedogapi.com/v1/images/search`)
             .then(res => res.json())
 
         setDogObject(rDog);
-        console.log(rDog);
     }
 
     return (
@@ -55,15 +53,12 @@ export const HomePage = (): ReactElement => {
             </HeaderContainer>
 
             <ContentContainer>
-                <p>Dog Picture Here....</p>
-                <DogImage src={`https://cdn2.thedogapi.com/images/zHwi3vVju.jpg`} />
+                <DogImage src={dogObject[0].url} />
                 <DogButton onClick={getDogURL}>SHOW ME THE DOG</DogButton>
 
             </ContentContainer>
 
         </AppContainer>
-
-
     )
 }
 
