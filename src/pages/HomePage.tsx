@@ -33,7 +33,7 @@ const DogButton = styled.button`
 const DogImage = styled.img`
   display: flex;
   max-width:640px;
-  max-height:320px;
+  max-height:400px;
   width: auto;
   height: auto;
 `
