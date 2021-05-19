@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {ReactElement, useState} from "react";
 import {DogResponseInitState} from "../types/types";
 import axios from "axios";
+import Button from '@material-ui/core/Button';
 
 const AppContainer = styled.div`
   display: flex;
@@ -23,11 +24,11 @@ const ContentContainer = styled.div`
   
 `
 
-const DogButton = styled.button`
+const DogButton = styled(Button)`
   width: fit-content;
   align-self: center;
   margin: 1rem;
-  
+  padding: 2rem;
 `
 
 const DogImage = styled.img`
@@ -36,6 +37,7 @@ const DogImage = styled.img`
   max-height:400px;
   width: auto;
   height: auto;
+  padding: 2rem;
 `
 
 export const HomePage = (): ReactElement => {
@@ -58,10 +60,12 @@ export const HomePage = (): ReactElement => {
                 <h3>...and do it now</h3>
             </HeaderContainer>
 
+            <DogButton variant="contained" color="primary" onClick={getDogURL}>SHOW ME THE DOG</DogButton>
+
             <ContentContainer>
                 <DogImage src={dogObject[0].url} />
             </ContentContainer>
-            <DogButton onClick={getDogURL}>SHOW ME THE DOG</DogButton>
+
         </AppContainer>
     )
 }
