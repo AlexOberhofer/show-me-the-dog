@@ -2,7 +2,7 @@
   "name": "show-me-the-dog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./show-me-the-dog",
+  "homepage": ".",
   "dependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.3",
