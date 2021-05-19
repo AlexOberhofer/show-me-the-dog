@@ -27,8 +27,7 @@ const ContentContainer = styled.div`
 const DogButton = styled(Button)`
   width: fit-content;
   align-self: center;
-  margin: 1rem;
-  padding: 2rem;
+  padding-bottom: 5rem;
 `
 
 const DogImage = styled.img`
@@ -37,7 +36,8 @@ const DogImage = styled.img`
   max-height:400px;
   width: auto;
   height: auto;
-  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 
 export const HomePage = (): ReactElement => {
