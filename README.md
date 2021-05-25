@@ -2,6 +2,8 @@
 
 For when you just want to see some dogs
 
+Available at alexoberhofer.github.io/show-me-the-dog/
+
 ## Available Scripts
 
 In the project directory, you can run:
